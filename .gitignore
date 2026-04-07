@@ -1,0 +1,37 @@
+# Models (large files)
+models/
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Data (private family data - NEVER commit)
+data/raw/
+data/processed/
+*.jsonl
+
+# Mock data is OK to commit
+# mock_data/ is tracked
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+wandb/
+runs/
+outputs/

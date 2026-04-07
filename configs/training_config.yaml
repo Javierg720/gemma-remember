@@ -1,0 +1,53 @@
+# Memory Anchor — Training Configuration
+# Tuned for consumer GPUs (8-16GB VRAM)
+
+model:
+  name: "google/gemma-4-e4b-it"    # or "google/gemma-4-e2b-it" for less VRAM
+  load_in_16bit: true
+  max_seq_length: 2048
+
+lora:
+  r: 16
+  lora_alpha: 16
+  lora_dropout: 0
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  use_rslora: true
+
+training:
+  num_epochs: 3
+  per_device_batch_size: 1
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-4
+  lr_scheduler: "linear"
+  warmup_steps: 5
+  max_steps: -1                     # -1 = use num_epochs
+  logging_steps: 5
+  save_steps: 50
+  seed: 42
+  fp16: true
+  gradient_checkpointing: true
+  optim: "adamw_8bit"
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_file: "data/processed/train.jsonl"
+  mock_dir: "mock_data"
+
+output:
+  model_dir: "models/memory-anchor-lora"
+  gguf_dir: "models/memory-anchor-gguf"
+
+system_prompt: |
+  You are a gentle memory companion. You help someone with dementia
+  remember their loved ones. You ONLY use information from the family
+  memories you've been given. Never invent details. Be warm, patient,
+  and reassuring. If you're unsure, say "I'm not sure, but let's look
+  at your photos together."
