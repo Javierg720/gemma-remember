@@ -2,6 +2,10 @@
 
 **An offline dementia care companion powered by Gemma 4.**
 
+## Demo Video
+
+[![Watch the demo](https://img.youtube.com/vi/PSULKHnq1kY/maxresdefault.jpg)](https://www.youtube.com/watch?v=PSULKHnq1kY)
+
 Gemma Remember helps people with dementia remember their loved ones. Upload family photos, voice clips, and short stories. When they ask "Who is this?", the app gently reminds them — grounded entirely in the data you provide. No hallucinations. No cloud. No data leaves the device.
 
 ## How It Works
@@ -71,6 +75,12 @@ python scripts/export_gguf.py
 ## For the Gemma 4 Good Hackathon
 
 This project is built for the [Gemma 4 Good Hackathon](https://www.kaggle.com/competitions/gemma-4-good-hackathon) on Kaggle. We believe the most powerful use of AI is the gentlest — helping someone remember the people they love.
+
+## Links
+
+- **Demo Video**: [YouTube](https://www.youtube.com/watch?v=PSULKHnq1kY)
+- **Kaggle Notebook (RAG version)**: [Memory Anchor RAG](https://www.kaggle.com/code/frgrgdfgd/memory-anchor-multimodal-rag-for-dementia-care)
+- **RAG version repo**: [github.com/Javierg720/gemma-remember-rag](https://github.com/Javierg720/gemma-remember-rag)
 
 ## License
 
